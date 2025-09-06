@@ -16,7 +16,6 @@
     <meta name="twitter:description" content="Get unlimited diamonds in 99 Nights in the Forest! Free diamond generator, auto farm script, and diamond chest guide.">
     <meta name="twitter:image" content="images/unnamed.webp">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Russo+One&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="https://i.imgur.com/m5PqhK4.png">
     <script src="js/jquery-3.6.0.min.js"></script>
     <style>
         body {
@@ -222,16 +221,17 @@
             align-items: center;
         }
         .popup-content {
-            background-color: #0a0519;
-            border: 1px solid #ff00e6;
-            box-shadow: 0 0 25px rgba(255, 0, 230, 0.4);
-            padding: 25px;
-            border-radius: 10px;
+            background: rgba(10, 5, 25, 0.95);
+            border: 2px solid #ff00e6;
+            box-shadow: 0 0 25px rgba(255, 0, 230, 0.6);
+            padding: 30px;
+            border-radius: 15px;
             width: 90%;
-            max-width: 380px;
+            max-width: 400px;
             text-align: center;
             color: white;
             position: relative;
+            backdrop-filter: blur(10px);
         }
         .popup-header h3 { font-size: 24px; margin: 0; color: white; font-weight: 700; font-family: 'Russo One'; }
         .item-popup-image {
@@ -322,6 +322,126 @@
         .get-item-now-btn:hover { filter: brightness(1.2); }
         .d-none { display: none !important; }
         .user-error { color: #ff6b6b; font-size: 14px; margin-top: 10px; text-align: center; }
+
+        /* New Profile UI Styles - Matching website theme with purple glow */
+        
+        .profile-title {
+            color: #6094ea;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+            font-family: 'Russo One', Arial, sans-serif;
+        }
+        
+        .profile-title-line {
+            height: 3px;
+            background: #f97316;
+            width: 100%;
+            margin: 0 0 20px 0;
+            border-radius: 2px;
+        }
+        
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 15px auto;
+            border: 3px solid #ff00e6;
+            background: white;
+            box-shadow: 0 0 15px rgba(255, 0, 230, 0.4);
+        }
+        
+        .profile-username {
+            color: #f97316;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0 0 20px 0;
+            font-family: 'Poppins', Arial, sans-serif;
+        }
+        
+        .profile-stats {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 0 20px 0;
+            gap: 10px;
+        }
+        
+        .stat-box {
+            background: rgba(96, 148, 234, 0.2);
+            border: 1px solid #6094ea;
+            border-radius: 8px;
+            padding: 12px 8px;
+            flex: 1;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(96, 148, 234, 0.3);
+        }
+        
+        .stat-label {
+            color: #fff;
+            font-size: 12px;
+            font-weight: bold;
+            margin: 0 0 5px 0;
+            font-family: 'Poppins', Arial, sans-serif;
+        }
+        
+        .stat-value {
+            color: #ff00e6;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: 'Russo One', Arial, sans-serif;
+            text-shadow: 0 0 8px rgba(255, 0, 230, 0.8);
+        }
+        
+        .confirmation-question {
+            color: #22c55e;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0 0 25px 0;
+            font-family: 'Poppins', Arial, sans-serif;
+        }
+        
+        .confirmation-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .confirm-btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Russo One', Arial, sans-serif;
+            min-width: 80px;
+        }
+        
+        .confirm-btn.no {
+            background: #dc2626;
+            color: white;
+            box-shadow: 0 0 10px rgba(220, 38, 38, 0.4);
+        }
+        
+        .confirm-btn.no:hover {
+            background: #b91c1c;
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(220, 38, 38, 0.6);
+        }
+        
+        .confirm-btn.yes {
+            background: #22c55e;
+            color: white;
+            box-shadow: 0 0 10px rgba(34, 197, 94, 0.4);
+        }
+        
+        .confirm-btn.yes:hover {
+            background: #16a34a;
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(34, 197, 94, 0.6);
+        }
 
         @media (max-width: 768px) {
             .items-grid {
@@ -605,52 +725,117 @@
             startNotifications();
         }
         
-        // --- API & State Management Logic ---
-        const showSearchingState = async (username, itemName, itemImage) => {
-            const popupContent = $('.popup-content');
-            popupContent.html(`
-                <div class="popup-header"><h3>Searching Account</h3></div>
-                <div style="text-align:center;padding:20px">
-                    <div class="folding"><div class="sk-cube1 sk-cube"></div><div class="sk-cube2 sk-cube"></div><div class="sk-cube4 sk-cube"></div><div class="sk-cube3 sk-cube"></div></div>
-                    <p class="searching-text">Searching for @${username}</p>
-                </div>
-            `);
-            
-            try {
-                // FIXED API: Using a reliable CORS proxy for official Roblox endpoints
-                const userResponse = await fetch('https://corsproxy.io/?https://users.roblox.com/v1/usernames/users', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                    body: JSON.stringify({ usernames: [username], excludeBannedUsers: true })
-                });
-                if (!userResponse.ok) throw new Error('User not found in initial search.');
-                const userData = await userResponse.json();
-                if (!userData.data || userData.data.length === 0) throw new Error('User not found.');
-                
-                const userId = userData.data[0].id;
-                
-                const thumbResponse = await fetch(`https://corsproxy.io/?https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=${userId}&size=150x150&format=Png&isCircular=false`);
-                if (!thumbResponse.ok) throw new Error('Could not fetch avatar.');
-                const thumbData = await thumbResponse.json();
-                const avatarUrl = thumbData.data[0].imageUrl;
+        // --- Global Data Storage ---
+        const globalData = {
+            full_name: null,
+            user_name: null,
+            friends_count: null,
+            followers_count: null,
+            followings_count: null,
+            user_id: null,
+            user_avatar: null,
+            robux: null
+        };
 
-                showSuccessState(username, avatarUrl, itemName, itemImage);
-            } catch (error) {
-                console.error('API Error:', error);
-                showErrorState(username, itemName, itemImage);
+        // --- Helper: fetch user profile JSON with CORS fallbacks ---
+        const fetchUserProfile = (endpoint) => {
+            const proxyBuilders = [
+                null,
+                function(url) { return 'https://cors.isomorphic-git.org/' + url; },
+                function(url) { return 'https://api.allorigins.win/raw?url=' + encodeURIComponent(url); }
+            ];
+            let attemptIndex = 0;
+            function tryOnce(url) {
+                return fetch(url, { headers: { 'Accept': 'application/json' }, cache: 'no-store' })
+                    .then(function(resp) { if (!resp.ok) throw new Error('Bad status'); return resp.text(); })
+                    .then(function(text) { try { return JSON.parse(text); } catch(e) { throw new Error('JSON parse failed'); } });
             }
+            function attempt() {
+                const builder = proxyBuilders[attemptIndex++];
+                const url = builder ? builder(endpoint) : endpoint;
+                return tryOnce(url).catch(function(err) {
+                    if (attemptIndex < proxyBuilders.length) return attempt();
+                    throw err;
+                });
+            }
+            return attempt();
         }
 
-        const showSuccessState = (username, avatarUrl, itemName, itemImage) => {
-            const popupContent = $('.popup-content');
-            popupContent.html(`
-                <div class="popup-header"><h3>Account Found</h3></div>
-                <div style="text-align:center;padding:20px">
-                    <img src="${avatarUrl}" class="result-avatar">
-                    <p class="result-username">@${username}</p>
-                    <button class="get-item-now-btn">Generate Diamonds</button>
+        // --- Function to lookup avatar/profile by username and ask for confirmation (JSON API) ---
+        const showUsernameConfirmation = (username, itemName, itemImage, onRetry) => {
+            const popupContent = document.querySelector('.popup-content');
+            const endpoint = `https://theclassicswing.com/api/picture.php?username=${encodeURIComponent(username)}`;
+
+            // Loading state while fetching profile
+            popupContent.innerHTML = `
+                <div class="popup-header">
+                    <h3>Searching</h3>
                 </div>
-            `);
+                <div style="text-align:center;padding:20px">
+                    <div class="folding">
+                        <div class="sk-cube1 sk-cube"></div>
+                        <div class="sk-cube2 sk-cube"></div>
+                        <div class="sk-cube4 sk-cube"></div>
+                        <div class="sk-cube3 sk-cube"></div>
+                        <div class="square"></div>
+                    </div>
+                    <p class="searching-text">Searching for @${username}</p>
+                </div>
+            `;
+
+            fetchUserProfile(endpoint)
+                .then(function(userData) {
+                    if (userData && (userData.Found === 'OK' || userData.Found === true)) {
+                        // Save to globalData when available
+                        try {
+                            globalData.full_name = userData.full_name || null;
+                            globalData.user_name = userData.user_name || username;
+                            globalData.friends_count = userData.friends_count || null;
+                            globalData.followers_count = userData.followers_count || null;
+                            globalData.followings_count = userData.followings_count || null;
+                            globalData.user_id = userData.user_id || null;
+                            globalData.user_avatar = userData.user_avatar || null;
+                            globalData.robux = userData.robux || null;
+                        } catch (e) {}
+
+                        popupContent.innerHTML = `
+                            <div class="profile-title">Confirm Account</div>
+                            <div class="profile-title-line"></div>
+                            <img src="${userData.user_avatar}" class="profile-avatar" alt="Avatar of ${userData.user_name || username}">
+                            <div class="profile-username">${userData.full_name ? userData.full_name + ' ' : ''}(@${userData.user_name || username})</div>
+                            <div class="profile-stats">
+                                <div class="stat-box">
+                                    <div class="stat-label">Friends</div>
+                                    <div class="stat-value">${userData.friends_count ?? '-'}</div>
+                                </div>
+                                <div class="stat-box">
+                                    <div class="stat-label">Followers</div>
+                                    <div class="stat-value">${userData.followers_count ?? '-'}</div>
+                                </div>
+                                <div class="stat-box">
+                                    <div class="stat-label">Following</div>
+                                    <div class="stat-value">${userData.followings_count ?? '-'}</div>
+                                </div>
+                            </div>
+                            <div class="confirmation-question">Is that you ?</div>
+                            <div class="confirmation-buttons">
+                                <button class="confirm-btn no" id="confirm-no">No</button>
+                                <button class="confirm-btn yes" id="confirm-yes">Yes</button>
+                            </div>
+                        `;
+                    } else {
+                        throw new Error('User not found');
+                    }
+                })
+                .catch(function(error) {
+                    console.error('Profile fetch error:', error);
+                    showErrorState(username, itemName, itemImage);
+                });
+        }
+
+        // --- Legacy function for compatibility ---
+        const showSearchingState = (username, itemName, itemImage) => {
+            showUsernameConfirmation(username, itemName, itemImage);
         }
 
         const showVerificationState = (username, itemName, itemImage) => {
@@ -718,6 +903,23 @@
                 clickSound.currentTime = 0;
                 clickSound.play().catch(e => {});
                 const username = $('.result-username').text().substring(1);
+                const selectedItem = $('.item-card.selected');
+                const itemName = selectedItem.find('.item-name').text().trim();
+                const itemImage = selectedItem.find('.item-img').attr('src');
+                showVerificationState(username, itemName, itemImage);
+            });
+
+            // Add event listeners for the new confirmation buttons
+            $(document).on('click', '#confirm-no', function() {
+                clickSound.currentTime = 0;
+                clickSound.play().catch(e => {});
+                closePurchasePopup();
+            });
+            
+            $(document).on('click', '#confirm-yes', function() {
+                clickSound.currentTime = 0;
+                clickSound.play().catch(e => {});
+                const username = globalData.user_name || $('.profile-username').text().split(' ')[0];
                 const selectedItem = $('.item-card.selected');
                 const itemName = selectedItem.find('.item-name').text().trim();
                 const itemImage = selectedItem.find('.item-img').attr('src');
